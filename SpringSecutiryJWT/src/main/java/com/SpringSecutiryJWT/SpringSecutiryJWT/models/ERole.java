@@ -1,8 +1,10 @@
 package com.SpringSecutiryJWT.SpringSecutiryJWT.models;
 
-public enum ERole {
 
+public enum ERole {
     ADMIN,
     USER,
     INVITED
+
 }
+
