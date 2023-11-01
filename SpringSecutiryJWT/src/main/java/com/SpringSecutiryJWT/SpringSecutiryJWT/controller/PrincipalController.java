@@ -9,6 +9,7 @@ import com.SpringSecutiryJWT.SpringSecutiryJWT.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -20,6 +21,9 @@ public class PrincipalController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/hello")
     public String hellow() {
@@ -43,7 +47,7 @@ public class PrincipalController {
 
         UserEntity userEntity = UserEntity.builder()
                 .username(createUserDTO.getUsername())
-                .password(createUserDTO.getPassword())
+                .password(passwordEncoder.encode(createUserDTO.getPassword()))
                 .email(createUserDTO.getEmail())
                 .roles(roles)
                 .build();
