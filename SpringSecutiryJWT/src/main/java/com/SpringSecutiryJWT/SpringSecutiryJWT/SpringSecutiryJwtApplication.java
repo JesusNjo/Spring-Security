@@ -19,7 +19,7 @@ public class SpringSecutiryJwtApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringSecutiryJwtApplication.class, args);
 	}
-
+/*
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
@@ -62,5 +62,5 @@ public class SpringSecutiryJwtApplication {
 					userRepository.save(userEntity3);
 
 		};
-	}
+	}*/
 }

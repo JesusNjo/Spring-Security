@@ -35,6 +35,11 @@ public class PrincipalController {
         return "Hello World SECURED";
     }
 
+    @GetMapping("/userList")
+    public ResponseEntity<?> getUsers(){
+        return ResponseEntity.ok(userRepository.findAll());
+    }
+
     @PostMapping("/createUser")
     public ResponseEntity<?> createUser(@Valid @RequestBody CreateUserDTO createUserDTO) {
 
